@@ -10,6 +10,8 @@ Enforcing style on code while you're writing complex logic can sometimes be hard
 
 This repository, where possible, provides editor configurations and linting along with a written style guide.
 
+- [.editorconfig](./.editorconfig) is an editor configuration file. See [editorconfig.org](http://editorconfig.org/) for more information, and download the appropriate plugin for your editor of choice.
+
 ## Languages
 
 Specific languages are covered as required.
