@@ -12,8 +12,12 @@ This repository, where possible, provides editor configurations and linting alon
 
 - [.editorconfig](./.editorconfig) is an editor configuration file. See [editorconfig.org](http://editorconfig.org/) for more information, and download the appropriate plugin for your editor of choice.
 
+### Linting
+
+We use linting where possible to enforce style and correct code (before we attempt to run it). Each language-specific folder should contain the necessary linting files and guides to use them.
+
 ## Languages
 
 Specific languages are covered as required.
 
-- [Node.js](./nodejs.md)
+- [Node.js](./nodejs/README.md)
