@@ -1,23 +1,9 @@
-# Idearium Developer Style Guide
+# Idearium Developer Resource
 
-This is a style guide for Idearium developers.
+This is a resource for Idearium developers.
 
-The purpose of a style guide, is so that all developers write the same code. Consistent, readable code across large code bases is important. Ideally, you shouldn't be able to tell the difference between different authors of the same code base.
+This resource will help with onboarding new developers to Idearium, into our tech stack, the way we manage projects and how we write good quality, maintainable code.
 
-## Editors
+This repository is broken down into some key areas:
 
-Enforcing style on code while you're writing complex logic can sometimes be hard. Always use the editor to help ensure you're writing good code.
-
-This repository, where possible, provides editor configurations and linting along with a written style guide.
-
-- [.editorconfig](./.editorconfig) is an editor configuration file. See [editorconfig.org](http://editorconfig.org/) for more information, and download the appropriate plugin for your editor of choice.
-
-### Linting
-
-We use linting where possible to enforce style and correct code (before we attempt to run it). Each language-specific folder should contain the necessary linting files and guides to use them.
-
-## Languages
-
-Specific languages are covered as required.
-
-- [Node.js](./nodejs/README.md)
+- [Style guide](./style-guide)
