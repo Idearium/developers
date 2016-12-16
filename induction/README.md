@@ -36,8 +36,10 @@ You'll need the following Atom editor plugins (or suitable alternatives if you c
 - [Atom Beautify](https://atom.io/packages/atom-beautify)
 - [editorconfig](https://atom.io/packages/editorconfig)
 - [emmet](https://atom.io/packages/emmet)
+- [docblockr](https://atom.io/packages/docblockr)
 - [language-docker](https://atom.io/packages/language-docker)
 - [language-nginx](https://atom.io/packages/language-nginx)
+- [linter](https://atom.io/packages/linter)
 - [linter-docker](https://atom.io/packages/linter-docker)
 - [linter-eslint](https://atom.io/packages/linter-eslint)
 
