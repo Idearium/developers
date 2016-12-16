@@ -34,9 +34,9 @@ The following details the software you should download and install on your compu
 You'll need the following Atom editor plugins (or suitable alternatives if you choose another editor):
 
 - [Atom Beautify](https://atom.io/packages/atom-beautify)
+- [docblockr](https://atom.io/packages/docblockr)
 - [editorconfig](https://atom.io/packages/editorconfig)
 - [emmet](https://atom.io/packages/emmet)
-- [docblockr](https://atom.io/packages/docblockr)
 - [language-docker](https://atom.io/packages/language-docker)
 - [language-nginx](https://atom.io/packages/language-nginx)
 - [linter](https://atom.io/packages/linter)
