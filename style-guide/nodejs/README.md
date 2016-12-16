@@ -11,7 +11,7 @@ The purpose of a style guide, is so that all developers write the same code. Con
 
 Specific languages are covered as required.
 
-- [Node.js](./nodejs/README.md)
+- [Node.js](./nodejs.md)
 
 ## Linting
 
