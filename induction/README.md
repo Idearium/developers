@@ -46,6 +46,7 @@ You'll need the following Atom editor plugins (or suitable alternatives if you c
 These are things that I'd like you to start reading.
 
 - [Idearium style guide](./style-guide)
+- [Tech stack](./stack)
 - [The Reactive Manifesto](http://www.reactivemanifesto.org/)
 - [Exploring es6](http://exploringjs.com/es6/index.html)
 - [The Docker Book](https://www.dropbox.com/s/3ghghh0x2h3tl3i/TheDockerBook.epub?dl=0)
