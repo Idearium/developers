@@ -8,15 +8,16 @@ We've split our core tech stack down into a few different categories:
 
 ### DevOps
 
-- Vagrant
-- Gulp.js
-- Git
-- Sass
+- Vagrant.
+- Gulp.js.
+- Git.
+- Sass.
 
 ### Application services
 
 - Node.js.
 - Mongo.
+- Express.
 - Linz.
 - Redis.
 
@@ -28,10 +29,10 @@ We've split our core tech stack down into a few different categories:
 
 ### Client-side
 
-- Angular.js
-- Vue.js
-- SaSS/Less
-- jQuery
+- Angular.js.
+- Vue.js.
+- SaSS/Less.
+- jQuery.
 
 ## DevOps
 
