@@ -7,3 +7,4 @@ This resource will help with onboarding new developers to Idearium, into our tec
 This repository is broken down into some key areas:
 
 - [Style guide](./style-guide)
+- [Induction and setup](./induction)
