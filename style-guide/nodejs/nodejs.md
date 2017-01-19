@@ -34,13 +34,13 @@ Use single quotes, unless you are writing JSON.
 *Right:*
 
 ```js
-const foo = 'bar'
+const foo = 'bar';
 ```
 
 *Wrong:*
 
 ```js
-const foo = "bar"
+const foo = "bar";
 ```
 
 ## Opening braces go on the same line
@@ -51,7 +51,7 @@ Your opening braces go on the same line as the statement.
 
 ```js
 if (true) {
-    console.log('winning')
+    console.log('winning');
 }
 ```
 
@@ -60,7 +60,7 @@ if (true) {
 ```js
 if (true)
 {
-    console.log('losing')
+    console.log('losing');
 }
 ```
 
@@ -73,13 +73,13 @@ Variables, properties and function names should use `lowerCamelCase`.  They shou
 *Right:*
 
 ```js
-const adminUser = db.query('SELECT * FROM users ...')
+const adminUser = db.query('SELECT * FROM users ...');
 ```
 
 *Wrong:*
 
 ```js
-const admin_user = db.query('SELECT * FROM users ...')
+const admin_user = db.query('SELECT * FROM users ...');
 ```
 
 ## Use UpperCamelCase for class names
@@ -107,11 +107,11 @@ Use trailing commas and put *short* declarations on a single line. Only quote ke
 *Right:*
 
 ```js
-const a = ['hello', 'world']
+const a = ['hello', 'world'];
 const b = {
     good: 'code',
     'is generally': 'pretty',
-}
+};
 ```
 
 *Wrong:*
@@ -119,10 +119,10 @@ const b = {
 ```js
 const a = [
     'hello', 'world'
-]
+];
 const b = {"good": 'code'
         , is generally: 'pretty'
-        }
+      };
 ```
 
 Use
@@ -134,9 +134,9 @@ Programming is not about remembering [stupid rules][comparisonoperators]. Use th
 *Right:*
 
 ```js
-const a = 0
+const a = 0;
 if (a === '') {
-    console.log('winning')
+    console.log('winning');
 }
 
 ```
@@ -144,9 +144,9 @@ if (a === '') {
 *Wrong:*
 
 ```js
-const a = 0
+const a = 0;
 if (a == '') {
-    console.log('losing')
+    console.log('losing');
 }
 ```
 
@@ -159,7 +159,7 @@ The ternary operator should only be used on a single line for very basic assignm
 *Right:*
 
 ```js
-const foo = (a === b) ? 1 : 2
+const foo = (a === b) ? 1 : 2;
 ```
 
 *Wrong:*
@@ -167,7 +167,7 @@ const foo = (a === b) ? 1 : 2
 ```js
 const foo = (a === b)
     ? 1
-    : 2
+    : 2;
 ```
 
 *Wrong:*
@@ -175,7 +175,7 @@ const foo = (a === b)
 ```js
 const tags = tags
     ? (this.tags ? this.tags.concat(this.tagFilter(tags)) : this.tagFilter(tags))
-    : this.tags
+    : this.tags;
 ```
 
 ## Do not extend built-in prototypes
@@ -185,9 +185,9 @@ Do not extend the prototype of native JavaScript objects. Your future self will 
 *Right:*
 
 ```js
-const a = []
+const a = [];
 if (!a.length) {
-    console.log('winning')
+    console.log('winning');
 }
 ```
 
@@ -195,12 +195,12 @@ if (!a.length) {
 
 ```js
 Array.prototype.empty = function() {
-    return !this.length
+    return !this.length;
 }
 
-const a = []
+const a = [];
 if (a.empty()) {
-    console.log('losing')
+    console.log('losing');
 }
 ```
 
@@ -211,7 +211,7 @@ Use whitespace on the first and last line of the function body, unless it's goin
 *Right:*
 
 ```js
-const toDegrees = angle => angle * (180 / Math.PI)
+const toDegrees = angle => angle * (180 / Math.PI);
 ```
 
 *Right:*
@@ -219,14 +219,14 @@ const toDegrees = angle => angle * (180 / Math.PI)
 ```js
 const copy = (constants, terms) => {
 
-    let copy = new Expression()
+    let copy = new Expression();
 
-    copy.constants = constants.map((c) => c.copy())
-    copy.terms = terms.map((t) => t.copy())
+    copy.constants = constants.map((c) => c.copy());
+    copy.terms = terms.map((t) => t.copy());
 
-    return copy
+    return copy;
 
-}
+};
 ```
 
 *Wrong:*
@@ -234,7 +234,7 @@ const copy = (constants, terms) => {
 ```js
 const toDegrees = angle => {
 
-    return angle * (180 / Math.PI)
+    return angle * (180 / Math.PI);
 
 }
 ```
@@ -243,12 +243,12 @@ const toDegrees = angle => {
 
 ```js
 const copy = (constants, terms) => {
-    let copy = new Expression()
+    let copy = new Expression();
 
-    copy.constants = constants.map((c) => c.copy())
-    copy.terms = terms.map((t) => t.copy())
+    copy.constants = constants.map((c) => c.copy());
+    copy.terms = terms.map((t) => t.copy());
 
-    return copy
+    return copy;
 }
 ```
 
@@ -267,14 +267,14 @@ as possible. The last return should be the default.
 const isPercentage = val => {
 
     if (val < 0) {
-        return false
+        return false;
     }
 
     if (val > 100) {
-        return false
+        return false;
     }
 
-    return true
+    return true;
 
 }
 ```
@@ -286,12 +286,12 @@ const isPercentage = val => {
 
     if (val >= 0) {
         if (val < 100) {
-            return true
+            return true;
         } else {
-            return false
+            return false;
         }
     } else {
-        return false
+        return false;
     }
 
 }
@@ -300,7 +300,7 @@ const isPercentage = val => {
 Or for this particular example it may also be fine to shorten things even further:
 
 ```js
-const isPercentage = val => (val >= 0 && val <= 100)
+const isPercentage = val => (val >= 0 && val <= 100);
 ```
 
 ## Avoid if else statements
@@ -313,12 +313,12 @@ The devil invented if else, and unless you're a worshipper of his ways, be advis
 const isPercentage = val => {
 
     if (val < 0 || val > 100) {
-        return false
+        return false;
     }
 
-    return true
+    return true;
 
-}
+};
 ```
 
 *Wrong:*
@@ -327,14 +327,14 @@ const isPercentage = val => {
 const isPercentage = val => {
 
     if (val < 0) {
-        return false
+        return false;
     } else (val > 100) {
-        return false
+        return false;
     } else {
-        return true
+        return true;
     }
 
-}
+};
 ```
 
 ## Name your closures
@@ -344,13 +344,13 @@ Give your closures a name. It shows that you care about them, and will produce b
 *Right:*
 
 ```js
-req.on('end', onEnd = () => console.log('winning'))
+req.on('end', onEnd = () => console.log('winning'));
 ```
 
 *Wrong:*
 
 ```js
-req.on('end', () => console.log('losing'))
+req.on('end', () => console.log('losing'));
 ```
 
 ## Use slashes for comments
@@ -361,7 +361,7 @@ Use slashes for both single line and multi line comments. Try to write comments 
 
 ```js
 // 'ID_SOMETHING=VALUE' -> ['ID_SOMETHING=VALUE'', 'SOMETHING', 'VALUE']
-const matches = item.match(/ID_([^\n]+)=([^\n]+)/))
+const matches = item.match(/ID_([^\n]+)=([^\n]+)/));
 
 // This function has a nasty side effect where a failure to increment a
 // redis counter used for statistics will cause an exception. This needs
@@ -370,7 +370,7 @@ const loadUser = (id, cb) => {
     // ...
 }
 
-const isSessionValid = (session.expires < Date.now())
+const isSessionValid = (session.expires < Date.now());
 if (isSessionValid) {
     // ...
 }
@@ -380,7 +380,7 @@ if (isSessionValid) {
 
 ```js
 // Execute a regex
-const matches = item.match(/ID_([^\n]+)=([^\n]+)/))
+const matches = item.match(/ID_([^\n]+)=([^\n]+)/));
 
 // Usage: loadUser(5, function() { ... })
 const loadUser = (id, cb) => {
@@ -388,7 +388,7 @@ const loadUser = (id, cb) => {
 }
 
 // Check if the session is valid
-const isSessionValid = (session.expires < Date.now())
+const isSessionValid = (session.expires < Date.now());
 
 // If the session is valid
 if (isSessionValid) {

@@ -7,7 +7,6 @@
         "no-console": 0,
         "no-param-reassign": [2, { "props": false }],
         "no-underscore-dangle": [2, { "allow": ["_id"] }],
-        "padded-blocks": 0,
-        "semi": [2, "never"]
+        "padded-blocks": 0
     }
 }
