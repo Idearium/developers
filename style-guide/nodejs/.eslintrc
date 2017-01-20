@@ -3,6 +3,9 @@
     "extends": "airbnb",
     "rules": {
         "arrow-body-style": 0,
+        "class-methods-use-this": [2, {
+            "exceptMethods": ["startServer"]
+        }],
         "comma-dangle": [2, "never"],
         "global-require": 0,
         "indent": [2, 4],
