@@ -18,3 +18,16 @@ Specific languages are covered as required.
 We use [eslint](http://eslint.org/) for linting Node.js code. There is an Atom Editor plugin called [linter-eslint](https://atom.io/packages/linter-eslint) to use the `.eslintrc` file.
 
 If you're creating a new project, make sure to copy the [.eslintrc](./.eslintrc) across to the repository.
+
+### Requirements
+
+Our eslint config relies on an a 3rd party config `eslint-config-airbnb`.
+To install it you need to run a command inside your vm:
+
+```shell
+# @ /vagrant/
+$ (
+        export PKG=eslint-config-airbnb;
+        c npm app info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs c npm app install --save-dev "$PKG@latest"
+  )
+```
