@@ -8,16 +8,18 @@ The purpose of a style guide, is so that all developers write the same code. Con
 
 All repos should follow a similar branching style to ensure a smooth development process.
 
-There are 2 main types of branches:
+There are 2 rules to git branching:
 
-- *General*, which provides a benefit to all contributors.
-- *Epic*, which should include the Jira epic name. *Feature* branches should then be added to this and use the Jira task ID.
+  1. If the user story can deliver benefit to the customer without linking to other user stories, one branch from master should be sufficient.
+
+  2. If the user story must be combined with others before delivering benefit to the customer, one epic (feature) branch, and then subsequent story branches should be used.
+
 
 ```shell
 master          # → Never push to this directly, always do a PR.
 ├── general     # → General branch
-└── epic        # → Epic branch
-    ├── XX-01   # → Feature/story branch
-    ├── XX-02   # → Feature/story branch
-    └── XX-03   # → Feature/story branch
+└── epic        # → Epic/feature branch
+    ├── XX-01   # → Story branch
+    ├── XX-02   # → Story branch
+    └── XX-03   # → Story branch
 ```
