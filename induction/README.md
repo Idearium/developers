@@ -21,8 +21,6 @@ You'll be invited to a few cloud services we use, please complete the registrati
 The following details the software you should download and install on your computer:
 
 - [Vagrant](https://www.vagrantup.com/)
-- [VMware Fusion (standard)](https://www.vmware.com/products/fusion/fusion-evaluation.html)
-- [Vagrant VMware plugin](https://www.vagrantup.com/docs/vmware/installation.html) (and install the plugin following [these instructions](https://www.vagrantup.com/docs/vmware/installation.html))
 - [VirtualBox](https://www.virtualbox.org/)
 - [Atom editor](https://atom.io/) (or your choice of editor)
 - [Slack](https://slack.com/downloads/osx) (our team domain is [idearium.slack.com](https://idearium.slack.com))
