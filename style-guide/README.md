@@ -22,6 +22,14 @@ Specific languages are covered as required.
 
 - [JavaScript (Node.js)](./nodejs/README.md)
 
+## Stack components
+
+These are critical components of our stack.
+
+- [RabbitMQ](./rabbitmq/README.md)
+
 ## Tools
+
+These are tools that we use for development, but not necessarily languages.
 
 - [Git](./git/README.md)
