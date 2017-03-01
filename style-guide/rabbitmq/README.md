@@ -28,7 +28,7 @@ Choose one of the following to name your exchange:
 - `success`
 - `fail`
 
-Note the use of `d` to create a tense. You should use present tense (i.e. `create`) when making a request for something to be completed. You should use past tense (i.e. `created`) to announce that something has happened.
+Note the use of tense to separate requests from notifications. You should use present tense (i.e. `create`) when making a request for something to be completed. You should use past tense (i.e. `created`) to announce that something has happened.
 
 `success` and `fail` exchanges can be used when announcing successful, or failed processes.
 
