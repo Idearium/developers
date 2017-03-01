@@ -20,4 +20,5 @@ We use linting where possible to enforce style and correct code (before we attem
 
 Specific languages are covered as required.
 
+- [Git](./git/README.md)
 - [Node.js](./nodejs/README.md)
