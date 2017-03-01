@@ -23,7 +23,7 @@ master                 # → Never push to this directly, always do a PR.
 
 ## Branch protection
 
-All repos should be setup with GitHub branch protection. This ensures a process to merging from a branch, into a master. To setup branch protection, you should follow [this guide](https://help.github.com/articles/about-protected-branches/).
+All repos should be setup with GitHub branch protection. This creates a process for merging from a branch into master. To setup branch protection, you should follow [this guide](https://help.github.com/articles/about-protected-branches/).
 
 We use the following setup for branches:
 
