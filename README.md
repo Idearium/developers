@@ -8,4 +8,4 @@ This repository is broken down into some key areas:
 
 - [Induction and setup](./induction)
 - [Our stack](./stack)
-- [Style guide](./style-guide)
+- [Style guides](./style-guide)
