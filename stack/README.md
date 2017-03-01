@@ -38,15 +38,15 @@ We've split our core tech stack down into a few different categories:
 
 DevOps is super important. The more happy the developer, the better her code.
 
-## Vagrant
+### Vagrant
 
 We use [Vagrant][vagrant] to provide isolated, consistent development environments.
 
-## Gulp
+### Gulp
 
 We use [Gulp][gulp] to drive our build and automation workflows.
 
-## Git
+### Git
 
 We use [Git][git] for versioning and [GitHub][github] for repository hosting.
 
