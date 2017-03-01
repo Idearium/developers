@@ -20,3 +20,18 @@ master                 # → Never push to this directly, always do a PR.
 ├── XX-01              # → User story ID.
 └── sso-integration    # → Describes what the branch intends to do.
 ```
+
+## Branch protection
+
+All repos should be setup with GitHub branch protection. This creates a process for merging from a branch into master. To setup branch protection, you should follow [this guide](https://help.github.com/articles/about-protected-branches/).
+
+We use the following setup for branches:
+
+- Default branch: `master`
+- Protected branches: `master`
+  - Require pull request reviews before merging: `checked`
+    - Include administrators: `unchecked`
+  - Require status checks to pass before merging: `checked`
+    - Include administrators: `unchecked`
+    - Require branches to be up to date before merging: `checked`
+  - Restrict who can push to this branch: `unchecked`

@@ -1,6 +1,6 @@
 # Idearium Developer Style Guide
 
-This is a style guide for Idearium developers.
+These are Idearium's style guide for developers. They cover both languages, environments and tools.
 
 The purpose of a style guide, is so that all developers write the same code. Consistent, readable code across large code bases is important. Ideally, you shouldn't be able to tell the difference between different authors of the same code base.
 
@@ -20,5 +20,8 @@ We use linting where possible to enforce style and correct code (before we attem
 
 Specific languages are covered as required.
 
+- [JavaScript (Node.js)](./nodejs/README.md)
+
+## Tools
+
 - [Git](./git/README.md)
-- [Node.js](./nodejs/README.md)
