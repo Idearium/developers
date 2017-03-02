@@ -34,9 +34,14 @@ Note the use of tense to separate requests from notifications. You should use pr
 
 ### Queues
 
-Queue names are largely throw away. The only reason we have a convention for them is that it aids in determining which microservice is listening to RabbitMQ.
+Queue names are important to determine if your consumers will receive messages in a competing fashion, or a fanout fashion. Follow these rules:
+
+- To have your consumers receive messages with the same routing key in a round-robin fashion) use a common name.
+- To have your consumers receive messages with the same routing key in in a fanout fashion, use a unique name.
 
 Use the following convention to name your queues `{project}.{container}.{model|process}`.
+
+It is important to remember that routing keys determine which queues receive the messages, but they have no impact on consumers receiving messages in a fanout or round-robin fashion.
 
 ### Routing keys
 
