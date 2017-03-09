@@ -1,6 +1,6 @@
-# Idearium templates
+# GitHub templates
 
-This is a collection of Idearium templates that should be used.
+This is a collection of GitHub templates that should be used.
 
 The purpose of a template, is so that all contributors can communicate in a clear and consistent way.
 
@@ -11,4 +11,4 @@ To install a template:
 
 Below are our currently used templates:
 
-- [PULL_REQUEST_TEMPLATE.md](./PULL_REQUEST_TEMPLATE.md)
+- [PULL_REQUEST_TEMPLATE.md](./templates/PULL_REQUEST_TEMPLATE.md)
