@@ -1,4 +1,4 @@
-# Idearium Git Style Guide
+# Idearium Git usage guide
 
 This is an Idearium style guide for Git.
 

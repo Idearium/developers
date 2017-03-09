@@ -1,4 +1,4 @@
-# Idearium Node.js Style Guide
+# Idearium JavaScript style guide
 
 This is a guide for writing consistent and aesthetically pleasing Node.js code. It is inspired by what is popular within the community, and flavoured with some personal opinions.
 

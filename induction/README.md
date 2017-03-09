@@ -1,4 +1,4 @@
-# Idearium Developers Induction
+# Idearium developers induction
 
 This will help you get off on the right foot as an Idearium developer.
 

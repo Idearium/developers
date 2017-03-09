@@ -1,4 +1,4 @@
-# Idearium Developer Style Guide
+# Idearium style guides
 
 These are Idearium's style guide for developers. They cover both languages, environments and tools.
 
@@ -20,16 +20,4 @@ We use linting where possible to enforce style and correct code (before we attem
 
 Specific languages are covered as required.
 
-- [JavaScript (Node.js)](./nodejs/README.md)
-
-## Stack components
-
-These are critical components of our stack.
-
-- [RabbitMQ](./rabbitmq/README.md)
-
-## Tools
-
-These are tools that we use for development, but not necessarily languages.
-
-- [Git](./git/README.md)
+- [JavaScript](./javascript/styleguide.md)
