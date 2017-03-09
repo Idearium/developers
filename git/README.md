@@ -4,3 +4,4 @@ Git is our version control platform. We also heavily utilise GitHub for hosting,
 
 - [Git usage guide](./usageguide.md)
 - [GitHub templates](./github-templates.md)
+- [Git cheatsheet](./cheatsheet.md)
