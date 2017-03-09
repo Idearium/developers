@@ -8,7 +8,7 @@ This repository is broken down into some key areas:
 
 - [Induction and setup](./induction)
 - [Our stack](./stack)
-- [Style guides](./style-guides)
+- [Style guides](./style-guides.md)
 
 ## [JavaScript](./javascript/)
 
