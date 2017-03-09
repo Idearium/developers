@@ -151,6 +151,131 @@ var b = {"good": 'code'
         };
 ```
 
+## Promises
+
+Always put `.then()` and `.catch()` on new lines.
+
+*Right:*
+
+```js
+Model1.findById(model1Id).exec()
+    .then((doc) => {
+
+        doc.active = false;
+        return doc.save();
+
+    })
+    .then(doc => log.info(doc, 'Doc saved'))
+    .catch(e => log.error(e, 'An error occurred'));
+```
+
+*Wrong:*
+
+```js
+Model1.findById(model1Id).exec().then((doc) => {
+
+    doc.active = false;
+    return doc.save();
+
+}).then(doc => log.info(doc, 'Doc saved')).catch((e) => {
+
+    return log.error(e, 'An error occurred');
+
+});
+```
+
+Where possible, don't nest promises.
+
+*Right:*
+
+```js
+Model1.findById(model1Id).exec()
+    .then(doc => Model2.findOne({ someRef: doc._id }).exec())
+    .then((doc2) => {
+
+      doc2.active = false;
+      return doc2.save();
+
+    })
+    .then(() => log.info('User updated'))
+    .catch(e => log.error(e, 'An error occurred'));
+```
+
+*Wrong:*
+
+```js
+Model1.findById(model1Id).exec()
+    .then((doc) => {
+
+      Model2.findOne({ someRef: doc._id }).exec()
+          .then((doc2) => {
+
+              doc2.active = false;
+              doc2.save()
+                  .then(log.info('User updated'));
+
+          })
+
+    })
+    .catch(e => log.error(e, 'An error occurred'));
+```
+
+*Right:*
+
+```js
+
+Model1.findById(model1Id).exec()
+    .then(doc => Model2.find({ someRef: doc._id }).exec())
+    .then((docs) => {
+
+        const updates = [];
+
+        docs.forEach((doc) => {
+
+            updates.push(new Promise((resolve, reject) => {
+
+                doc.active = false;
+                doc.save()
+                    .then(savedDoc => resolve(savedDoc))
+                    .catch(e => reject(e));
+
+            }));
+
+        });
+
+        return updates;
+
+    })
+    .then(updates => Promise.all(updates))
+    .then(results => log.info({ results }, 'All users updated'))
+    .catch(e => log.error(e, 'An error occurred'));
+```
+
+*Wrong:*
+
+```js
+Model1.findById(model1Id).exec()
+    .then((doc) => {
+
+        Model2.find({ someRef: doc._id }).exec()
+            .then((docs) => {
+
+                docs.forEach((doc) => {
+
+                    doc.active = false;
+                    doc.save()
+                        .then(savedDoc => log.info(savedDoc, 'Doc saved'))
+                        .catch(e => log.error(e, 'An error occurred'));
+
+                });
+
+            })
+            .catch(e => log.error(e, 'An error occurred'));
+
+    })
+    .catch(e => log.error(e, 'An error occurred'));
+```
+
 ## Use the === operator
 
 Programming is not about remembering [stupid rules][comparisonoperators]. Use the triple equality operator as it will work just as expected.
