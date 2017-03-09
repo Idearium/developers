@@ -193,8 +193,8 @@ Model1.findById(model1Id).exec()
     .then(doc => Model2.findOne({ someRef: doc._id }).exec())
     .then((doc2) => {
 
-      doc2.active = false;
-      return doc2.save();
+        doc2.active = false;
+        return doc2.save();
 
     })
     .then(() => log.info('User updated'))
