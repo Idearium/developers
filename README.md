@@ -22,6 +22,6 @@ This repository is broken down into some key areas:
 ## [Git + GitHub](./git/)
 
 - [Usage Guide](./git/usageguide.md)
-- [Templates](./git/templates.md)
+- [Templates](./git/github-templates.md)
 
 ## [Development tools](./development-tools/)
