@@ -1,13 +1,11 @@
 {
     "root": true,
     "env": {
-        "es6": true,
-        "mongo": true,
-        "node": true
+        "browser": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 5,
         "sourceType": "script"
     },
     "rules": {
@@ -39,9 +37,10 @@
         "no-extend-native": "error",
         "no-extra-bind": "error",
         "no-extra-label": "error",
-        "no-floating-decimal": "error",
+        "no-floating-decimal": "warn",
         "no-global-assign": "error",
         "no-implicit-coercion": "error",
+        "no-implicit-globals": "error",
         "no-implied-eval": "error",
         "no-invalid-this": "error",
         "no-iterator": "error",
@@ -94,7 +93,7 @@
         "no-path-concat": "error",
         "no-process-env": "error",
         "no-process-exit": "error",
-        "no-sync": "error",
+        "no-sync": "warn",
 
         "array-bracket-spacing": "error",
         "block-spacing": "error",
@@ -150,7 +149,7 @@
         "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
         "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }],
         "one-var": ["error", "never"],
-        "operator-assignment": "error",
+        "operator-assignment": "warn",
         "operator-linebreak": ["error", "none"],
         "padded-blocks": ["warn", "always"],
         "quote-props": ["error", "consistent-as-needed", { "keywords": true }],
@@ -166,23 +165,6 @@
         "space-unary-ops": "error",
         "spaced-comment": "error",
         "unicode-bom": "error",
-        "wrap-regex": "error",
-
-        "arrow-body-style": "error",
-        "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
-        "arrow-spacing": "error",
-        "no-confusing-arrow": ["error", { "allowParens": true }],
-        "no-duplicate-imports": ["error", { "includeExports": true }],
-        "no-useless-computed-key": "error",
-        "no-useless-constructor": "error",
-        "no-useless-rename": "error",
-        "no-var": "error",
-        "object-shorthand": "error",
-        "prefer-arrow-callback": "error",
-        "prefer-const": "error",
-        "prefer-template": "error",
-        "rest-spread-spacing": "error",
-        "symbol-description": "error",
-        "template-curly-spacing": "error"
+        "wrap-regex": "error"
     }
 }
