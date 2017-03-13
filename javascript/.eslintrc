@@ -118,7 +118,13 @@
         "lines-around-comment": "error",
         "lines-around-directive": "error",
         "max-depth": "error",
-        "max-len": "warn",
+        "max-len": ["error", {
+          "ignoreComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreRegExpLiterals": true
+        }],
         "max-lines": "warn",
         "max-nested-callbacks": ["error", 3],
         "max-params": ["error", 4],
