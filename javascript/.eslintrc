@@ -109,7 +109,7 @@
         "eol-last": "error",
         "func-call-spacing": "error",
         "func-names": "error",
-        "func-style": ["error", "declaration"],
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
         "indent": "error",
         "key-spacing": "error",
         "keyword-spacing": "error",
