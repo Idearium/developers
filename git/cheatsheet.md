@@ -35,3 +35,11 @@ Resets the repository to the speicific commit hash, but keeps the changes to the
 ## `git difftool --cached`
 
 Uses your configured diffing application to show the staged changes.
+
+## `git fetch --all`
+
+Perform a git fetch, and include all remotes that are configured on your local repository.
+
+## `git pull --rebase`
+
+Use this when you're pulling in remote changes, to a branch that has unreleased commits. It will ensure your commits remain on top.
