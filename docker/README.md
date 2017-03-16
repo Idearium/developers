@@ -28,10 +28,10 @@ We require the ability to run more than one process in our Docker containers for
 
  We use following common services inside Docker containers in most our projects:
 
- - Nginx:  web server for serving static content. [More information] (https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/README.md) on how to containerize and use Nginx as a Proxy
+ - Nginx:  web server for serving static content. [More information](https://github.com/smebberson/docker-alpine/blob/master/alpine-nginx/README.md) on how to containerize and use Nginx as a Proxy
 
- - Consul: We use consul for discovering and configuring services in Docker infrastructure. [Read] (https://www.consul.io/intro/) for more informartion on consul
+ - Consul: We use consul for discovering and configuring services in Docker infrastructure. [Read](https://www.consul.io/intro/) for more informartion on consul
 
- - Logentries linux agent: We use logentries linux aget to acceess Logentries logging infrastructure from application. [More on] (https://docs.logentries.com/docs/linux-agent) Logentries agent.
+ - Logentries linux agent: We use logentries linux aget to acceess Logentries logging infrastructure from application. [More on](https://docs.logentries.com/docs/linux-agent) Logentries agent.
 
 __Note:__ We use __s6__ to allow us to use and manage multiple processes inside Docker container, as mentioned previously.
