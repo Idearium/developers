@@ -89,7 +89,9 @@ compare(foo, bar)
 
 ## Promise Chaining
 
-When working with multiple Promises in a *series* fashion, you can chain them together:
+When working with multiple Promises in a *series* fashion, you can chain them together.
+
+  > An **important** gotcha is that promises are executed immediately upon creation, never directly pass a Promise.
 
 ```javascript
 function foo (param) {
