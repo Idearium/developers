@@ -1,12 +1,22 @@
 # Idearium JavaScript Style Guide
 
-This is a guide for writing consistent and aesthetically pleasing Node.js code. It is inspired by what is popular within the community, and flavoured with some personal opinions.
+This is a guide for writing consistent and aesthetically pleasing JavaScript code. It is inspired by what is popular within the community, and flavoured with some personal opinions.
 
 It is licensed under the [CC BY-SA 3.0][cc] license. You are encouraged to fork this repository and make adjustments according to your preferences.
 
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+
+## Table of Contents
+
+- [Possible Errors](#possible-errors)
+- [Best Practices](#best-practices)
+- [Strict Mode](#strict-mode)
+- [Variables](#variables)
+- [Node.js and CommonJS](#nodejs-and-commonjs)
+- [Stylistic Issues](#stylistic-issues)
+- [ECMAScript 6](#ecmascript-6)
 
 ## Possible Errors
 
