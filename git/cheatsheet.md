@@ -32,6 +32,6 @@ Resets the repository to the state of the master branch on the origin.
 
 Resets the repository to the speicific commit hash, but keeps the changes to the files.
 
-## `git diftool --cached`
+## `git difftool --cached`
 
 Uses your configured diffing application to show the staged changes.
