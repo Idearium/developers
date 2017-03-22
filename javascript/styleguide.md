@@ -953,122 +953,134 @@ These rules relate to code running in Node.js, or in browsers with CommonJS:
 
 - ### Require return statements after callbacks ([callback-return](http://eslint.org/docs/rules/callback-return))
 
-  > Why?
+  > Why? Prevents errors from calling the callback multiple times. e.g. `Can't render headers after they are sent to the client.`
 
   ```javascript
   // Good.
+  function foo (err, callback) {
 
+      if (err) {
+          return callback(err);
+      }
+
+      return callback();
+
+  }
 
   // Bad.
+  function foo (err, callback) {
 
+      if (err) {
+          callback(err);
+      }
+
+      callback();
+
+  }
   ```
 
 - ### Require require() calls to be placed at top-level module scope ([global-require](http://eslint.org/docs/rules/global-require))
 
-  > Why?
+  > Why? It can cause performance issues and ES6 modules mandate that import and export statements can only occur in the top level of the module’s body.
 
   ```javascript
   // Good.
+  const someModule = require('someModule');
 
+  module.exports = { someModule };
 
   // Bad.
-
+  module.exports = { someModule: require('someModule') }
   ```
 
 - ### Require error handling in callbacks ([handle-callback-err](http://eslint.org/docs/rules/handle-callback-err))
 
-  > Why?
+  > Why? It can lead to strange errors.
 
   ```javascript
   // Good.
+  function loadData (err, data) {
 
+      if (err) {
+          log.err(err);
+      }
+
+      return doSomething();
+
+  }
 
   // Bad.
-
+  function loadData (err, data) {
+      return doSomething();
+  }
   ```
 
 - ### Disallow require calls to be mixed with regular variable declarations ([no-mixed-requires](http://eslint.org/docs/rules/no-mixed-requires))
 
-  > Why?
+  > Why? It clearer for the reader.
 
   ```javascript
   // Good.
+  const moduleA = require('a');
+  const moduleB = require('b');
 
+  const x = 10;
 
   // Bad.
-
+  const moduleA = require('a');
+  const x = 10;
+  const moduleB = require('b');
   ```
 
 - ### Disallow new operators with calls to require ([no-new-require](http://eslint.org/docs/rules/no-new-require))
 
-  > Why?
+  > Why? This can lead to confusion and looks messy.
 
   ```javascript
   // Good.
+  const Module = require('module');
 
+  const module = new Module();
 
   // Bad.
-
+  const module = new (require('module'));
   ```
 
 - ### Disallow string concatenation with `__dirname` and `__filename` ([no-path-concat](http://eslint.org/docs/rules/no-path-concat))
 
-  > Why?
+  > Why? Compatibility across multiple OSs.
 
   ```javascript
   // Good.
+  const path = require('path');
 
+  const fullPath = path.join(__dirname, 'foo.js');
 
   // Bad.
-
+  const fullPath = __dirname + "/foo.js";
   ```
 
 - ### Disallow the use of process.env ([no-process-env](http://eslint.org/docs/rules/no-process-env))
 
-  > Why?
+  > Why? This should only be used in a config file.
 
   ```javascript
   // Good.
+  const config = require('../lib/config');
 
+  const environment = config.get('env');
 
   // Bad.
-
+  const environment = process.env.NODE_ENV;
   ```
 
 - ### Disallow the use of process.exit() ([no-process-exit](http://eslint.org/docs/rules/no-process-exit))
 
-  > Why?
+  > Why? This is a dangerous operation and should only be used as a last resort.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
-  ```
-
-- ### Disallow specified modules when loaded by require ([no-restricted-modules](http://eslint.org/docs/rules/no-restricted-modules))
-
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
-  ```
-
-- ### Disallow synchronous methods ([no-sync](http://eslint.org/docs/rules/no-sync))
-
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
+  process.exit(1);
   ```
 
 ## Stylistic Issues
