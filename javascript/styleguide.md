@@ -144,160 +144,251 @@ These rules relate to possible syntax or logic errors in JavaScript code:
 
 These rules relate to better ways of doing things to help you avoid problems:
 
-- ### Enforce getter and setter pairs in objects ([accessor-pairs](http://eslint.org/docs/rules/accessor-pairs))
-
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
-  ```
-
 - ### Enforce return statements in callbacks of array methods ([array-callback-return](http://eslint.org/docs/rules/array-callback-return))
 
-  > Why?
+  > Why? It's probably a mistake if you don't.
 
   ```javascript
   // Good.
-
+  const bar = foo.map(x => x);
 
   // Bad.
+  const bar = foo.filter((x) => {
 
+      if (x) {
+          return true;
+      }
+
+  });
   ```
 
 - ### Enforce the use of variables within the scope they are defined ([block-scoped-var](http://eslint.org/docs/rules/block-scoped-var))
 
-  > Why?
+  > Why? Avoid potential bugs with variable hoisting.
 
   ```javascript
   // Good.
+  function doTryCatch() {
 
+      let build;
+      let f;
+
+      try {
+          build = 1;
+      } catch (e) {
+          f = build;
+      }
+
+  }
 
   // Bad.
+  function doTryCatch() {
 
+      try {
+          var build = 1;
+      } catch (e) {
+          var f = build;
+      }
+
+  }
   ```
 
 - ### Enforce that class methods utilize this ([class-methods-use-this](http://eslint.org/docs/rules/class-methods-use-this))
 
-  > Why?
+  > Why? If a class method does not use `this`, it can safely be made a static function with the exception of starting the server.
 
   ```javascript
   // Good.
-
+  class A {
+      static foo() {
+          console.log("Hello World");
+      }
+  }
 
   // Bad.
-
+  class A {
+      foo() {
+          console.log("Hello World");
+      }
+  }
   ```
 
 - ### Enforce a maximum cyclomatic complexity allowed in a program ([complexity](http://eslint.org/docs/rules/complexity))
 
-  > Why?
+  > Why? Code with a high cyclomatic complexity becomes difficult to follow.
 
   ```javascript
   // Good.
+  function a (x) {
 
+      if (true) {
+          return x;
+      }
+
+      return 4;
+
+  }
 
   // Bad.
+  function a (x) {
 
+      if (x === 1) {
+          return 1;
+      } elseif (x === 2) {
+          return 2;
+      } elseif (x === 3) {
+          return 3;
+      } elseif (x === 4) {
+          return 4;
+      } elseif (x === 5) {
+          return 5;
+      } elseif (x === 6) {
+          return 6;
+      }
+
+  }
   ```
 
 - ### Require return statements to either always or never specify values ([consistent-return](http://eslint.org/docs/rules/consistent-return))
 
-  > Why?
+  > Why? It makes the code intentions clear.
 
   ```javascript
   // Good.
+  User.findById(id).exec()
+    .then((user) => {
 
+      if (!user) {
+        return new Error('No user found.');
+      }
+
+      return user;
+
+    })
+    .then(user => res.json(user))
+    .catch(next);
 
   // Bad.
+  User.findById(id).exec()
+    .then((user) => {
 
+      if (user) {
+        return user;
+      }
+
+    })
+    .then(user => res.json(user))
+    .catch(next);
   ```
 
 - ### Enforce consistent brace style for all control statements ([curly](http://eslint.org/docs/rules/curly))
 
-  > Why?
+  > Why? Easier to read.
 
   ```javascript
   // Good.
-
+  if (foo) {
+      bar();
+  }
 
   // Bad.
-
+  if (foo) bar();
   ```
 
 - ### Require default cases in switch statements ([default-case](http://eslint.org/docs/rules/default-case))
 
-  > Why?
+  > Why? Prevents weird errors.
 
   ```javascript
   // Good.
-
+  switch (expression) {
+    case expression:
+      doSomething();
+      break;
+    default:
+      doSomethingElse();
+  }
 
   // Bad.
-
+  switch (expression) {
+    case expression:
+      doSomething();
+      break;
+  }
   ```
 
 - ### Enforce consistent newlines before and after dots ([dot-location](http://eslint.org/docs/rules/dot-location))
 
-  > Why?
+  > Why? Easier to read and it's compatible with syntax highlighting.
 
   ```javascript
   // Good.
-
+  User.findById(id).exec()
+    .then(...)
+    .catch(...);
 
   // Bad.
-
+  User.findById(id).exec().
+    then(...).
+    catch(...);
   ```
 
 - ### Enforce dot notation whenever possible ([dot-notation](http://eslint.org/docs/rules/dot-notation))
 
-  > Why?
+  > Why? Improves code readability.
 
   ```javascript
   // Good.
-
+  const x = foo.bar;
 
   // Bad.
-
+  const x = foo['bar'];
   ```
 
 - ### Require the use of === and !== ([eqeqeq](http://eslint.org/docs/rules/eqeqeq))
 
-  > Why?
+  > Why? It's typesafe and prevents errors.
 
   ```javascript
   // Good.
-
+  [] === false; // false
 
   // Bad.
-
+  [] == false; // true
   ```
 
 - ### Require for-in loops to include an if statement ([guard-for-in](http://eslint.org/docs/rules/guard-for-in))
 
-  > Why?
+  > Why? Avoid unexpected items in your for loop.
 
   ```javascript
   // Good.
+  const has = Object.prototype.hasOwnProperty;
 
+  for (key in foo) {
+
+      if (has.call(foo, key)) {
+          doSomething(key);
+      }
+
+  }
 
   // Bad.
-
+  for (key in foo) {
+      doSomething(key);
+  }
   ```
 
 - ### Disallow the use of alert, confirm, and prompt ([no-alert](http://eslint.org/docs/rules/no-alert))
 
-  > Why?
+  > Why? Probably code leftover from development debugging.
 
   ```javascript
   // Good.
-
+  customAlert('Something happened!');
 
   // Bad.
-
+  alert('Something happened!');
   ```
 
 - ### Disallow the use of arguments.caller or arguments.callee ([no-caller](http://eslint.org/docs/rules/no-caller))
