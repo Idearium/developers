@@ -22,6 +22,41 @@ It is licensed under the [CC BY-SA 3.0][cc] license. You are encouraged to fork 
 
 These rules relate to possible syntax or logic errors in JavaScript code:
 
+- ### Disallow `await` inside of loops ([no-await-in-loop](http://eslint.org/docs/rules/no-await-in-loop))
+
+  > Why? You should take full advantage of the parallelisation benefits of `async`/`await`.
+
+  ```javascript
+  // Good.
+  async function foo(things) {
+
+      const results = [];
+
+      for (const thing of things) {
+          // Good: all asynchronous operations are immediately started.
+          results.push(bar(thing));
+      }
+
+      // Now that all the asynchronous operations are running, here we wait until they all complete.
+      return baz(await Promise.all(results));
+
+  }
+
+  // Bad.
+  async function foo (things) {
+
+    const results = [];
+
+    for (const thing of things) {
+      // Bad: each loop iteration is delayed until the entire asynchronous operation completes
+      results.push(await bar(thing));
+    }
+
+    return baz(results);
+
+  }
+  ```
+
 - ### Disallow comparing against -0 ([no-compare-neg-zero](http://eslint.org/docs/rules/no-compare-neg-zero))
 
   > Why? Comparing against -0 will not work as expected.
@@ -855,14 +890,18 @@ These rules relate to better ways of doing things to help you avoid problems:
 
 - ### Require or disallow “Yoda” conditions ([yoda](http://eslint.org/docs/rules/yoda))
 
-  > Why?
+  > Why? Understand hard to Yoda.
 
   ```javascript
   // Good.
-
+  if (a === 1) {
+    doSomething();
+  }
 
   // Bad.
-
+  if (1 === a) {
+    doSomething();
+  }
   ```
 
 ## Strict Mode
