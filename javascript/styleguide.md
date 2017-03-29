@@ -393,110 +393,142 @@ These rules relate to better ways of doing things to help you avoid problems:
 
 - ### Disallow the use of arguments.caller or arguments.callee ([no-caller](http://eslint.org/docs/rules/no-caller))
 
-  > Why?
+  > Why? They are forbidden in ECMAScript 5 while in strict mode.
 
   ```javascript
   // Good.
-
+  [1,2,3,4,5].map(function(n) {
+    return !(n > 1) ? 1 : factorial(n - 1) * n;
+  });
 
   // Bad.
-
+  [1,2,3,4,5].map(function factorial(n) {
+    return !(n > 1) ? 1 : arguments.callee(n - 1) * n;
+  });
   ```
 
 - ### Disallow division operators explicitly at the beginning of regular expressions ([no-div-regex](http://eslint.org/docs/rules/no-div-regex))
 
-  > Why?
+  > Why? To avoid confusion.
 
   ```javascript
   // Good.
-
+  function bar() { return /\=foo/; }
 
   // Bad.
-
+  function bar() { return /=foo/; }
   ```
 
 - ### Disallow else blocks after return statements in if statements ([no-else-return](http://eslint.org/docs/rules/no-else-return))
 
-  > Why?
+  > Why? It's unnecessary.
 
   ```javascript
   // Good.
+  function foo() {
 
+    if (x) {
+      return y;
+    }
+
+    return z;
+
+  }
 
   // Bad.
+  function foo() {
 
+    if (x) {
+
+      return y;
+
+    } else {
+
+      return z;
+
+    }
+
+  }
   ```
 
 - ### Disallow empty functions ([no-empty-function](http://eslint.org/docs/rules/no-empty-function))
 
-  > Why?
+  > Why? If you must, leave a comment to let the reader know why the function is empty.
 
   ```javascript
   // Good.
-
+  function foo() {
+  // Do nothing.
+  }
 
   // Bad.
-
+  function foo() {}
   ```
 
 - ### Disallow null comparisons without type-checking operators ([no-eq-null](http://eslint.org/docs/rules/no-eq-null))
 
-  > Why?
+  > Why? It can have unintended results.
 
   ```javascript
   // Good.
-
+  if (foo === null) {
+    bar();
+  }
 
   // Bad.
-
+  if (foo == null) {
+    bar();
+  }
   ```
 
 - ### Disallow the use of eval() ([no-eval](http://eslint.org/docs/rules/no-eval))
 
-  > Why?
+  > Why? Injection attacks!
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  global.eval("var a = 0");
   ```
 
 - ### Disallow extending native types ([no-extend-native](http://eslint.org/docs/rules/no-extend-native))
 
-  > Why?
+  > Why? It can break other parts of your code.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  Object.prototype.a ='a';
   ```
 
 - ### Disallow unnecessary calls to .bind() ([no-extra-bind](http://eslint.org/docs/rules/no-extra-bind))
 
-  > Why?
+  > Why? Try to avoid the unnecessary use of `bind()`.
 
   ```javascript
   // Good.
-
+  var x = function () {
+    this.foo();
+  }.bind(bar);
 
   // Bad.
-
+  var x = function () {
+    foo();
+  }.bind(bar);
   ```
 
 - ### Disallow unnecessary labels ([no-extra-label](http://eslint.org/docs/rules/no-extra-label))
 
-  > Why?
+  > Why? Hrmmm yes this rule has been included, no, you should not use labels.
 
   ```javascript
   // Good.
-
+  while (a) {
+    break;
+  }
 
   // Bad.
-
+  A: while (a) {
+    break A;
+  }
   ```
 
 - ### Disallow leading or trailing decimal points in numeric literals ([no-floating-decimal](http://eslint.org/docs/rules/no-floating-decimal))
