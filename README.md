@@ -9,6 +9,17 @@ This repository is broken down into some key areas:
   - [Induction and setup](./induction)
   - [Our stack](./stack)
   - [Style guides](./style-guides.md)
+  
+## [Development tools](./development-tools/)
+
+## [Docker](./docker/)
+
+  - [Usage Guide](./docker/README.md)
+
+## [Git + GitHub](./git/)
+
+  - [Usage Guide](./git/usageguide.md)
+  - [Templates](./git/github-templates.md)
 
 ## [JavaScript](./javascript/)
 
@@ -19,10 +30,3 @@ This repository is broken down into some key areas:
 ## [RabbitMQ](./rabbitmq/)
 
   - [Usage Guide](./rabbitmq/usageguide.md)
-
-## [Git + GitHub](./git/)
-
-  - [Usage Guide](./git/usageguide.md)
-  - [Templates](./git/github-templates.md)
-
-## [Development tools](./development-tools/)
