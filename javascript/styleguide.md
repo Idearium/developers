@@ -18,6 +18,16 @@ It is licensed under the [CC BY-SA 3.0][cc] license. You are encouraged to fork 
 - [Stylistic Issues](#stylistic-issues)
 - [ECMAScript 6](#ecmascript-6)
 
+## Above all else
+
+- ### Clarity is better than cleverness
+
+  > Why? Keep things simple. Keep things easy to read (really important). Make sure your code is easily comprehendible. Write code such that the most important communication they do is not to the computer that executes them but to the human beings who will read and maintain the source code in the future (including yourself).
+
+  This comes from the ['Basics of the Unix Philosophy handbook'][unixphilosophyruleofclarity].
+
+  [unixphilosophyruleofclarity]: http://www.faqs.org/docs/artu/ch01s06.html#id2877610
+
 ## Possible Errors
 
 These rules relate to possible syntax or logic errors in JavaScript code:
@@ -533,62 +543,49 @@ These rules relate to better ways of doing things to help you avoid problems:
 
 - ### Disallow leading or trailing decimal points in numeric literals ([no-floating-decimal](http://eslint.org/docs/rules/no-floating-decimal))
 
-  > Why?
+  > Why? Makes it difficult to distinguish between the decimal point and the dot operator.
 
   ```javascript
   // Good.
-
-
-  // Bad.
-
-  ```
-
-- ### Disallow assignments to native objects or read-only global variables ([no-global-assign](http://eslint.org/docs/rules/no-global-assign))
-
-  > Why?
-
-  ```javascript
-  // Good.
-
+  const num = 0.5;
 
   // Bad.
-
+  const num = .5;
   ```
 
 - ### Disallow shorthand type conversions ([no-implicit-coercion](http://eslint.org/docs/rules/no-implicit-coercion))
 
-  > Why?
+  > Why? It's a lot clearer for the reader.
 
   ```javascript
   // Good.
-
+  const s = String(foo);
 
   // Bad.
-
+  const s = '' + foo;
   ```
 
-- ### Disallow variable and function declarations in the global scope ([no-implicit-globals](http://eslint.org/docs/rules/no-implicit-globals))
+- ### Disallow variable and function declarations in the global scope (Browser only) ([no-implicit-globals](http://eslint.org/docs/rules/no-implicit-globals))
 
-  > Why?
+  > Why? To stop declarations at the top-level scope becoming global variables on the window object.
 
   ```javascript
   // Good.
-
+  (function() {
+    function bar () {}
+  })();
 
   // Bad.
-
+  function bar () {}
   ```
 
 - ### Disallow the use of eval()-like methods ([no-implied-eval](http://eslint.org/docs/rules/no-implied-eval))
 
-  > Why?
+  > Why? Crazy shit that you will probably never need. Stay away from it.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  execScript("alert('Hi!')");
   ```
 
 - ### Disallow this keywords outside of classes or class-like objects ([no-invalid-this](http://eslint.org/docs/rules/no-invalid-this))
@@ -1275,26 +1272,31 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Enforce consistent brace style for blocks ([brace-style](http://eslint.org/docs/rules/brace-style))
 
-  > Why?
+  > Why? Your opening braces go on the same line as the statement.
 
   ```javascript
   // Good.
-
+  if (true) {
+      console.log('winning');
+  }
 
   // Bad.
-
+  if (true)
+  {
+      console.log('losing');
+  }
   ```
 
 - ### Enforce camelcase naming convention ([camelcase](http://eslint.org/docs/rules/camelcase))
 
-  > Why?
+  > Why? Variables, properties and function names should use `lowerCamelCase`. They should also be descriptive. Single character variables and uncommon abbreviations should generally be avoided.
 
   ```javascript
   // Good.
-
+  const fooBar = 'fooBar';
 
   // Bad.
-
+  const bar_baz = 'bad!';
   ```
 
 - ### Enforce or disallow capitalization of the first letter of a comment ([capitalized-comments](http://eslint.org/docs/rules/capitalized-comments))
@@ -1371,15 +1373,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Require or disallow newline at the end of files ([eol-last](http://eslint.org/docs/rules/eol-last))
 
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
-  ```
+  > Why? Use UNIX-style newlines (`\n`), and a newline character as the last character of a file. Windows-style newlines (`\r\n`) are forbidden inside any repository.
 
 - ### Require or disallow spacing between function identifiers and their invocations ([func-call-spacing](http://eslint.org/docs/rules/func-call-spacing))
 
@@ -1467,14 +1461,18 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Enforce consistent indentation ([indent](http://eslint.org/docs/rules/indent))
 
-  > Why?
+  > Why? Use 4 **spaces** for indenting your code and swear an oath to never mix tabs and spaces - a special kind of hell is awaiting you otherwise.
 
   ```javascript
   // Good.
-
+  function foo () {
+      doSomething();
+  }
 
   // Bad.
-
+  function foo () {
+    doSomething();
+  }
   ```
 
 - ### Enforce the consistent use of either double or single quotes in JSX attributes ([jsx-quotes](http://eslint.org/docs/rules/jsx-quotes))
@@ -1899,15 +1897,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Disallow trailing whitespace at the end of lines ([no-trailing-spaces](http://eslint.org/docs/rules/no-trailing-spaces))
 
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
-  ```
+  > Why? Just like you brush your teeth after every meal, you clean up any trailing whitespace in your JS files before committing. Otherwise the rotten smell of careless neglect will eventually drive away contributors and/or co-workers.
 
 - ### Disallow dangling underscores in identifiers ([no-underscore-dangle](http://eslint.org/docs/rules/no-underscore-dangle))
 
@@ -2067,14 +2057,15 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Enforce the consistent use of either backticks, double, or single quotes ([quotes](http://eslint.org/docs/rules/quotes))
 
-  > Why?
+  > Why? Use single quotes, unless you are writing JSON.
 
   ```javascript
   // Good.
-
+  const foo = 'foo';
+  const bar = `${foo}bar`;
 
   // Bad.
-
+  const foo = "foo";
   ```
 
 - ### Require JSDoc comments ([require-jsdoc](http://eslint.org/docs/rules/require-jsdoc))
@@ -2091,14 +2082,17 @@ These rules relate to style guidelines, and are therefore quite subjective:
 
 - ### Require or disallow semicolons instead of ASI ([semi](http://eslint.org/docs/rules/semi))
 
-  > Why?
+  > Why? According to [scientific research][hnsemicolons], the usage of semicolons is a core value of our community. Consider the points of [the opposition][theopposition], but be a traditionalist when it comes to abusing error correction mechanisms for cheap syntactic pleasures.
+
+  [theopposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
+  [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
   ```javascript
   // Good.
-
+  const foo = 'foo';
 
   // Bad.
-
+  const foo = 'foo'
   ```
 
 - ### Enforce consistent spacing before and after semicolons ([semi-spacing](http://eslint.org/docs/rules/semi-spacing))
