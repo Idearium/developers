@@ -590,422 +590,467 @@ These rules relate to better ways of doing things to help you avoid problems:
 
 - ### Disallow this keywords outside of classes or class-like objects ([no-invalid-this](http://eslint.org/docs/rules/no-invalid-this))
 
-  > Why?
+  > Why? Under the strict mode, `this` keywords outside of classes or class-like objects might be `undefined` and raise a `TypeError`.
 
   ```javascript
   // Good.
-
+  class Foo {
+      constructor() {
+          this.a = 0;
+          baz(() => this);
+      }
+  }
 
   // Bad.
-
+  const foo = function() {
+      this.a = 0;
+      baz(() => this);
+  };
   ```
 
 - ### Disallow the use of the __iterator__ property ([no-iterator](http://eslint.org/docs/rules/no-iterator))
 
-  > Why?
-
-  ```javascript
-  // Good.
-
-
-  // Bad.
-
-  ```
+  > Why? This property is obsolete.
 
 - ### Disallow labeled statements ([no-labels](http://eslint.org/docs/rules/no-labels))
 
-  > Why?
+  > Why? Work of the devil! 😈
 
   ```javascript
   // Good.
-
+  while (true) {
+      break;
+  }
 
   // Bad.
-
+  label:
+      while(true) {
+          // ...
+      }
   ```
 
 - ### Disallow unnecessary nested blocks ([no-lone-blocks](http://eslint.org/docs/rules/no-lone-blocks))
 
-  > Why?
+  > Why? Looks confusing, get rid of it!
 
   ```javascript
   // Good.
+  if (foo) {
 
+      if (bar) {
+          baz();
+      }
+
+  }
 
   // Bad.
+  if (foo) {
 
+      bar();
+
+      {
+          baz();
+      }
+
+  }
   ```
 
 - ### Disallow function declarations and expressions inside loop statements ([no-loop-func](http://eslint.org/docs/rules/no-loop-func))
 
-  > Why?
+  > Why? This creates a closure around the loop.
 
   ```javascript
   // Good.
+  const a = function() {};
 
+  for (let i=10; i; i--) {
+      a();
+  }
 
   // Bad.
+  for (let i=10; i; i--) {
 
+      const a = function() {};
+      a();
+
+  }
   ```
 
 - ### Disallow magic numbers ([no-magic-numbers](http://eslint.org/docs/rules/no-magic-numbers))
 
-  > Why?
+  > Why? Makes your code more readable.
 
   ```javascript
   // Good.
-
+  const tax = 0.25;
+  const itemPrice = 1.00;
+  const finalPrice = itemPrice + (itemPrice * tax);
 
   // Bad.
-
+  const finalPrice = 1.00 + (1.00 * 0.25);
   ```
 
 - ### Disallow multiple spaces ([no-multi-spaces](http://eslint.org/docs/rules/no-multi-spaces))
 
-  > Why?
+  > Why? This is typically a mistake.
 
   ```javascript
   // Good.
-
+  if (foo === 'bar') {}
 
   // Bad.
-
+  if (foo  === 'bar') {}
   ```
 
 - ### Disallow multiline strings ([no-multi-str](http://eslint.org/docs/rules/no-multi-str))
 
-  > Why?
+  > Why? It's confusing for the reader, try not to use multiline strings.
 
   ```javascript
   // Good.
-
+  const x = 'Line1\nLine2';
 
   // Bad.
-
+  const x = 'Line1 \
+            Line2';
   ```
 
 - ### Disallow new operators outside of assignments or comparisons ([no-new](http://eslint.org/docs/rules/no-new))
 
-  > Why?
+  > Why? Use a function instead.
 
   ```javascript
   // Good.
-
+  const person = new Person();
 
   // Bad.
-
+  new Person();
   ```
 
 - ### Disallow new operators with the Function object ([no-new-func](http://eslint.org/docs/rules/no-new-func))
 
-  > Why?
+  > Why? Let's not play who can make the most difficult to read code.
 
   ```javascript
   // Good.
-
+  const x = function (a, b) {
+      return a + b;
+  };
 
   // Bad.
-
+  const x = new Function('a', 'b', 'return a + b');
   ```
 
 - ### Disallow new operators with the String, Number, and Boolean objects ([no-new-wrappers](http://eslint.org/docs/rules/no-new-wrappers))
 
-  > Why?
+  > Why? These actually create objects, i.e. `typeof` will return an `'object'`.
 
   ```javascript
   // Good.
-
+  const text = 'Hello world';
 
   // Bad.
-
+  const stringObject = new String('Hello world');
   ```
 
 - ### Disallow octal escape sequences in string literals ([no-octal-escape](http://eslint.org/docs/rules/no-octal-escape))
 
-  > Why?
+  > Why? It has been deprecated.
 
   ```javascript
   // Good.
-
+  const foo = "Copyright \u00A9";
 
   // Bad.
-
+  const foo = "Copyright \251";
   ```
 
 - ### Disallow reassigning function parameters ([no-param-reassign](http://eslint.org/docs/rules/no-param-reassign))
 
-  > Why?
+  > Why? Can be misleading and lead to confusing behaviour.
 
   ```javascript
   // Good.
-
+  function foo (bar) {
+      bar.prop = 'value';
+  }
 
   // Bad.
-
+  function foo (bar) {
+      bar = 'value';
+  }
   ```
 
 - ### Disallow the use of the __proto__ property ([no-proto](http://eslint.org/docs/rules/no-proto))
 
-  > Why?
+  > Why It has been deprecated.
 
   ```javascript
   // Good.
-
-
-  // Bad.
-
-  ```
-
-- ### Disallow certain properties on certain objects ([no-restricted-properties](http://eslint.org/docs/rules/no-restricted-properties))
-
-  > Why?
-
-  ```javascript
-  // Good.
-
+  const a = Object.getPrototypeOf(obj);
 
   // Bad.
-
+  const a = obj.__proto__;
   ```
 
 - ### Disallow assignment operators in return statements ([no-return-assign](http://eslint.org/docs/rules/no-return-assign))
 
-  > Why?
+  > Why? It is difficult to tell the intent of the `return` statement.
 
   ```javascript
   // Good.
-
+  function doSomething() {
+      return foo == bar + 2;
+  }
 
   // Bad.
-
+  function doSomething() {
+      return (foo = bar + 2);
+  }
   ```
 
 - ### Disallow unnecessary return await ([no-return-await](http://eslint.org/docs/rules/no-return-await))
 
-  > Why?
+  > Why? That's not how `async function`s work.
 
   ```javascript
   // Good.
-
+  async function foo() {
+      const x = await bar();
+      return x;
+  }
 
   // Bad.
-
+  async function foo() {
+      return await bar();
+  }
   ```
 
 - ### Disallow javascript: urls ([no-script-url](http://eslint.org/docs/rules/no-script-url))
 
-  > Why?
+  > Why? Using `javascript:` URLs is considered by some as a form of `eval`.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  location.href = "javascript:void(0)";
   ```
 
 - ### Disallow comparisons where both sides are exactly the same ([no-self-compare](http://eslint.org/docs/rules/no-self-compare))
 
-  > Why?
+  > Why? Comparing a variable against itself is usually an error.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  if (x === x) {
+      x = 20;
+  }
   ```
 
 - ### Disallow comma operators ([no-sequences](http://eslint.org/docs/rules/no-sequences))
 
-  > Why?
+  > Why? Don't use it at all.
 
   ```javascript
   // Good.
-
+  if ((doSomething(), !!test));
 
   // Bad.
-
+  if (doSomething(), !!test);
   ```
 
 - ### Disallow throwing literals as exceptions ([no-throw-literal](http://eslint.org/docs/rules/no-throw-literal))
 
-  > Why?
+  > Why? It's considered best practice to only throw `Error` objects.
 
   ```javascript
   // Good.
-
+  throw new Error();
+  throw new HttpError();
 
   // Bad.
+  const err = 'Error';
+  throw err;
 
   ```
 
 - ### Disallow unmodified loop conditions - ([no-unmodified-loop-condition](http://eslint.org/docs/rules/no-unmodified-loop-condition))
 
-  > Why?
+  > Why? It's possibly a mistake.
 
   ```javascript
   // Good.
-
+  while (node) {
+      doSomething(node);
+      node = node.parent;
+  }
 
   // Bad.
-
+  while (node) {
+      doSomething(node);
+  }
   ```
 
 - ### Disallow unused expressions ([no-unused-expressions](http://eslint.org/docs/rules/no-unused-expressions))
 
-  > Why?
+  > Why? An unused expression which has no effect on the state of the program indicates a logic error.
 
   ```javascript
   // Good.
-
+  n += 1;
 
   // Bad.
-
+  n + 1;
   ```
 
 - ### Disallow unnecessary calls to .call() and .apply() ([no-useless-call](http://eslint.org/docs/rules/no-useless-call))
 
-  > Why?
+  > Why? `Function.prototype.call()` and `Function.prototype.apply()` are slower than the normal function invocation.
 
   ```javascript
   // Good.
-
+  foo.call(obj, 1, 2, 3);
 
   // Bad.
-
+  foo.call(null, 1, 2, 3);
   ```
 
 - ### Disallow unnecessary concatenation of literals or template literals ([no-useless-concat](http://eslint.org/docs/rules/no-useless-concat))
 
-  > Why?
+  > Why? It’s unnecessary to concatenate two strings together.
 
   ```javascript
   // Good.
-
+  const a = '10';
 
   // Bad.
-
+  const a = '1' + '0';
   ```
 
 - ### Disallow unnecessary escape characters ([no-useless-escape](http://eslint.org/docs/rules/no-useless-escape))
 
-  > Why?
+  > Why? Escaping non-special characters in strings, template literals, and regular expressions doesn’t have any effect.
 
   ```javascript
   // Good.
-
+  let foo = "hol\"a\"";
 
   // Bad.
-
+  let foo = "hol\a";
   ```
 
 - ### Disallow redundant return statements ([no-useless-return](http://eslint.org/docs/rules/no-useless-return))
 
-  > Why?
+  > Why? A` return;` statement with nothing after it is redundant.
 
   ```javascript
   // Good.
-
+  function foo() {
+      return doSomething();
+  }
 
   // Bad.
-
+  function foo() {
+      doSomething();
+      return;
+  }
   ```
 
 - ### Disallow void operators ([no-void](http://eslint.org/docs/rules/no-void))
 
-  > Why?
+  > Why? It's hard to read.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  const foo = void bar();
   ```
 
 - ### Disallow specified warning terms in comments ([no-warning-comments](http://eslint.org/docs/rules/no-warning-comments))
 
-  > Why?
+  > Why? Most likely you want to fix or review the code, and then remove the comment, before you consider the code to be production ready.
 
   ```javascript
-  // Good.
-
-
   // Bad.
-
+  // TODO: this
   ```
 
-- ### Disallow with statements ([no-with](http://eslint.org/docs/rules/no-with))
+- ### Disallow `with` statements ([no-with](http://eslint.org/docs/rules/no-with))
 
-  > Why?
+  > Why? Adds members of an object to the current scope, making it impossible to tell what a variable inside the block actually refers to.
 
   ```javascript
   // Good.
-
+  const r = ({x, y}) => Math.sqrt(x * x + y * y);
 
   // Bad.
-
+  with (point) {
+      r = Math.sqrt(x * x + y * y); // is r a member of point?
+  }
   ```
 
 - ### Require using Error objects as Promise rejection reasons ([prefer-promise-reject-errors](http://eslint.org/docs/rules/prefer-promise-reject-errors))
 
-  > Why?
+  > Why? It is considered good practice to only pass instances of the built-in `Error` object to the `reject()` function.
 
   ```javascript
   // Good.
-
+  Promise.reject(new Error('something bad happened'));
 
   // Bad.
-
+  Promise.reject('something bad happened');
   ```
 
 - ### Enforce the consistent use of the radix argument when using parseInt() ([radix](http://eslint.org/docs/rules/radix))
 
-  > Why?
+  > Why? Helps prevent confusion.
 
   ```javascript
   // Good.
-
+  const num = parseInt("071", 10); // 71
 
   // Bad.
-
+  const num = parseInt("071"); // 57
   ```
 
 - ### Disallow async functions which have no await expression ([require-await](http://eslint.org/docs/rules/require-await))
 
-  > Why?
+  > Why? Async functions which have no `await` expression may be the unintentional result of refactoring.
 
   ```javascript
   // Good.
-
+  async function foo() {
+      await doSomething();
+  }
 
   // Bad.
-
+  async function foo() {
+      doSomething();
+  }
   ```
 
 - ### Require var declarations be placed at the top of their containing scope ([vars-on-top](http://eslint.org/docs/rules/vars-on-top))
 
-  > Why?
+  > Why? Avoid confusion with hoisting, you rarely need `var` anymore anyway.
 
   ```javascript
   // Good.
-
+  var a;
+  f();
 
   // Bad.
-
+  f();
+  var a;
   ```
 
 - ### Require parentheses around immediate function invocations ([wrap-iife](http://eslint.org/docs/rules/wrap-iife))
 
-  > Why?
+  > Why? You can immediately invoke function expressions, but not function declarations.
 
   ```javascript
   // Good.
-
+  const x = (function () { return { y: 1 };}());
 
   // Bad.
-
+  const x = function () { return { y: 1 };}();
   ```
 
 - ### Require or disallow “Yoda” conditions ([yoda](http://eslint.org/docs/rules/yoda))
@@ -1014,13 +1059,13 @@ These rules relate to better ways of doing things to help you avoid problems:
 
   ```javascript
   // Good.
-  if (a === 1) {
-    doSomething();
+  if (color === 'red') {
+      // ...
   }
 
   // Bad.
-  if (1 === a) {
-    doSomething();
+  if ('red' === color) {
+      // ...
   }
   ```
 
