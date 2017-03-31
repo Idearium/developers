@@ -50,23 +50,10 @@ Use this when you're pulling in remote changes, to a branch that has unreleased 
 
 ## `git commit --amend -m "{new commit message here}"`
 
-Amends the last commit message.
+Amends the last commit message, and creates a new commit. Be aware that it creates a new commit, and therefore take into consideration remote branches as you may need to force push.
 __Note:__
  - Use this command to amend the last commit message only if that commit is not pushed to remote.
- - This will create new commit ID. However, the commit was not pushed to github, so you can safely use this command to amend the latest commit message.
-
-## `git stash list`
-
-Lists all current stash.
-
-## `git stash save "{optional message here}"`
-
-Stash the changes in current branch.
 
 ## `git stash save -u "{optional message here}"`
 
 Stash the changes in current branch including untracked files.
-
-## `git stash pop stash@{number}`
-
-Applies a specified stash and removes that stash.
