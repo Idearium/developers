@@ -10,14 +10,14 @@ It works by breaking projects down into little bits of user functionality - user
 
 To manage projects we are using;
 
-1. Jira - for issue tracking in Kanban boards
-2. Confluence - for scoping documentation
-3. Github - for release and version control
-4. Slack - for team communication 
+1. Jira - for issue tracking in Kanban boards, [Idearium](https://idearium.atlassian.net) and [RAS](https://flashmedia.atlassian.net)
+2. Confluence - for scoping documentation, [Idearium](https://idearium.atlassian.net/wiki) and [RAS](https://flashmedia.atlassian.net/wiki)
+3. Github - for release and version control, [Idearium](https://github.com/idearium) and [RAS](https://github.com/flashmedia)
+4. [Slack](https://idearium.slack.com) - for team communication 
 
 ### Integrations
 
 To improve the management of our projects we are working on aligning the functionality of our tools to ensure streamlined communication and the best team approach.
 
-- Github and Jira
+- Github and Jira - [Smart Commits]()
 - Jira and Slack
