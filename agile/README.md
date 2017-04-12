@@ -19,5 +19,5 @@ To manage projects we are using;
 
 To improve the management of our projects we are working on aligning the functionality of our tools to ensure streamlined communication and the best team approach.
 
-- Github and Jira - [Smart Commits]()
+- Github and Jira - [Smart Commits](../smart-commits.md)
 - Jira and Slack
