@@ -10,10 +10,13 @@ This integration between Jira and Github allows you to transition, log time and 
 
 **Possible transitions**
 
-| Backlog | To do | In progress | Verfiy | Done | Not on board |
-| ------- | ----- | ----------- | ------ | ---- | ------------ |
-| Open (Idearium) 
-To-do (RAS)| Selected for development | In progress | Resolved | Done | Closed |
+| Jira Column | Workflow Status | Commit Syntax |
+| ----------- | --------------- | ------------- |
+| Backlog | Open (Idearium) To-do (RAS) | #open or #to-do |
+| To do | Selected for development | #Selected |
+| In progress | In progress | #in or #in-progress |
+| Verfiy | Resolved | #resolved |
+| Done | Done | #done |
 
 ## Comment
 
