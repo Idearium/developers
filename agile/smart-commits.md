@@ -6,7 +6,7 @@ This integration between Jira and Github allows you to transition, log time and 
 
 | Description | Syntax | Example |
 | ----------- | ------ | ------- |
-| Transitions issue to a particular workflow state. | '<ignored text> <ISSUE_KEY> <ignored text> #<transition_name> <comment_string>' | 'FB-99 #close Fixed this today' |
+| Transitions issue to a particular workflow state. | ' <ignored text> <ISSUE_KEY> <ignored text> #<transition_name> <comment_string> ' | ' FB-99 #close Fixed this today ' |
 
 **Possible transitions**
 
