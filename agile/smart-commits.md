@@ -12,7 +12,8 @@ This integration between Jira and Github allows you to transition, log time and 
 
 | Backlog | To do | In progress | Verfiy | Done | Not on board |
 | ------- | ----- | ----------- | ------ | ---- | ------------ |
-| Open (Idearium) To-do (RAS)| Selected for development | In progress | Resolved | Done, Closed |
+| Open (Idearium) 
+To-do (RAS)| Selected for development | In progress | Resolved | Done | Closed |
 
 ## Comment
 
