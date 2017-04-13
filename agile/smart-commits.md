@@ -6,29 +6,25 @@ This integration between Jira and Github allows you to transition, log time and 
 
 | Description | Syntax | Example |
 | ----------- | ------ | ------- |
-| Transitions issue to a particular workflow state. | ' <ignored text> <ISSUE_KEY> <ignored text> #<transition_name> <comment_string> ' | ' FB-99 #close Fixed this today ' |
+| Transitions issue to a particular workflow state. | `<ignored text> <ISSUE_KEY> <ignored text> #<transition_name> <comment_string>` | `FB-99 #close Fixed this today` |
 
 **Possible transitions**
 
-- Open (backlog, Idearium)
-- To-do (backlog, RAS)
-- Selected for development
-- In progress
-- Resolved
-- Done
-- Closed
+| Backlog | To do | In progress | Verfiy | Done | Not on board |
+| ------- | ----- | ----------- | ------ | ---- | ------------ |
+| Open (Idearium) To-do (RAS)| Selected for development | In progress | Resolved | Done, Closed |
 
 ## Comment
 
-| Description | Add a comment to an issue. |
-| Syntax | '<ignored text> <ISSUE_KEY> <ignored text> #comment <comment_string>' |
-| Example | 'FB-90 Added new logo' |
+| Description | Syntax | Example |
+| ----------- | ------ | ------- |
+| Add a comment to an issue. | `<ignored text> <ISSUE_KEY> <ignored text> #comment <comment_string>` | `FB-90 Added new logo` |
 
 ## Log time
 
-| Description | Log time against an issue issue. |
-| Syntax | '<ignored text> <ISSUE_KEY> <ignored text> #time <value>w <value>d <value>h <value>m <comment_string>' |
-| Example | 'FB-34 #time 1w 2d 4h 30m Total work logged' |
+| Description | Syntax | Example |
+| ----------- | ------ | ------- |
+| Log time against an issue issue. | `<ignored text> <ISSUE_KEY> <ignored text> #time <value>w <value>d <value>h <value>m <comment_string>` | `FB-34 #time 1w 2d 4h 30m Total work logged` |
 
 ## Advanced commits
 
