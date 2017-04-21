@@ -12,6 +12,10 @@ This repository is broken down into some key areas:
   
 ## [Development tools](./development-tools/)
 
+## [Bash](./bash/)
+
+  - [Usage Guide](./bash/README.md)
+
 ## [Docker](./docker/)
 
   - [Usage Guide](./docker/README.md)
