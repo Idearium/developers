@@ -58,7 +58,7 @@ if [ -z "$VAR_NAME" ]; then
 fi
 ```
 
-### Checking `string` equality
+### Checking string equality
 
 This `if` statement will return `true` if both strings are equal.
 
