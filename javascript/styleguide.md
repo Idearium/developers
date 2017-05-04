@@ -2,12 +2,6 @@
 
 This is a guide for writing consistent and aesthetically pleasing Node.js code. It is inspired by what is popular within the community, and flavoured with some personal opinions.
 
-It is licensed under the [CC BY-SA 3.0][cc] license. You are encouraged to fork this repository and make adjustments according to your preferences.
-
-[cc]: http://creativecommons.org/licenses/by-sa/3.0/
-
-![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
-
 ## 4 Spaces for indention
 
 Use 4 **spaces** for indenting your code and swear an oath to never mix tabs and spaces - a special kind of hell is awaiting you otherwise.
