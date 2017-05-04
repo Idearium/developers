@@ -1,10 +1,10 @@
 ## Our process
 
-We manage the delivery of the software we build using agile.
+We manage the development and delivery of the software we build using agile.
 
-Agile is an iterative approach to software delivery that builds software incrementally from the start of the project, instead of trying to deliver it all at once near the end.
+Agile is an iterative approach to developing software that delivers software incrementally from the start of the project, instead of trying to deliver it all near the end.
 
-It works by breaking projects down into little bits of user functionality - user stories - prioritizing them, and continuously releasing functionality to the client throughout the project.
+It works by breaking projects down into little bits of user functionality (user stories) prioritizing them, and continuously releasing functionality to the client throughout the project.
 
 ## Our tools
 
