@@ -18,7 +18,7 @@ Creates a local branch and then pushes it to the origin repository.
 
 ## `git checkout -b {name} origin/{name}`
 
-Creates a local branch from existing remote branch with tracking
+Creates a local branch from existing remote branch with tracking.
 
 ## `git branch -D {name} && git push origin :{name}`
 
@@ -51,8 +51,6 @@ Use this when you're pulling in remote changes, to a branch that has unreleased 
 ## `git commit --amend -m "{new commit message here}"`
 
 Amends the last commit message, and creates a new commit. Be aware that it creates a new commit, and therefore take into consideration remote branches as you may need to force push.
-__Note:__
- - Use this command to amend the last commit message only if that commit is not pushed to remote.
 
 ## `git stash save -u "{optional message here}"`
 
