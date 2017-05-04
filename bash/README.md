@@ -8,11 +8,11 @@ Idearium typically has two environments in which different shell script interpre
 
 ## File naming
 
-All shell scripts should end with the `.sh` extension. It is okay to have a symlink to the shell script within the `/usr/local/bin` directory that doesn't contain the `.sh` extension.
+Shell scripts should end with the `.sh` extension. It is okay to have a symlink to the shell script within the `/usr/local/bin` directory that doesn't contain the `.sh` extension.
 
 ## Variable naming
 
-All variables within shell scripts should be all uppercase and words separated with underscores (`_`).
+Variables within shell scripts should be all uppercase and words separated with underscores (`_`).
 
 _Right:_
 
