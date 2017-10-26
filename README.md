@@ -37,7 +37,7 @@ This repository is broken down into some key areas:
 
 ## [Testing](./testing/)
 
-  - [Device and browser testing](./testing/device and browser.md)
+  - [Device and browser testing](./testing/device%20and%20browser.md)
   - [The how, when and what guide](./testing/guide.md)
 
 ---
