@@ -18,6 +18,15 @@ You will need a [codefresh account](https://g.codefresh.io/). Please let one of 
 
 It is good practice to have the developer tools of a browser open while you are testing to try and capture errors. [Chrome developer tools](https://developer.chrome.com/devtools) are the most user friendly.
 
+## Make it break
+
+When we test, we only ever test what we think should work. Not what people might do when they are clicking around everywhere. Please try your hardest to break things. Do silly things. Try things that you know might break the application. Some examples are;
+
+- Upload a huge file or the wrong file type to an import
+- While a page is still loading try clicking all the buttons
+- Use the back buttons
+- Subscribe and try to subscribe again
+
 # What to test
 
 When testing web applications at Idearium you will need to appropriately [browser and device test](./testing/guide.md) to our standards.
