@@ -43,7 +43,35 @@ You'll need the following Atom editor plugins (or suitable alternatives if you c
 - [pigments](https://atom.io/packages/pigments)
 - [sort-lines](https://atom.io/packages/sort-lines)
 
-Note: atom-ide-ui contains it's own linter. You can optionally use [linter](https://atom.io/packages/linter) instead.
+#### atom-ide-ui
+
+`atom-ide-ui` contains it's own linter. You can optionally use [linter](https://atom.io/packages/linter) instead.
+
+#### docblockr
+
+We use `docblockr` to add JSDoc comments to every function. To ensure our comments look consistent, you should update your settings to **not** align tags `Align tags: no`. This will help to prevent strange indentation when updating parameters.
+
+```javascript
+/**
+ * Test
+ * @type {String} a   Test string
+ * @type {String} param1 Test string
+ *
+ */
+const test = (a, param) => {
+
+};
+```
+
+#### sort-lines
+
+Our js linter (eslint) uses natural sorting for object keys. You should update your keybindings to automate this.
+
+```coffee
+# @ ~/.atom/keymap.cson
+'atom-text-editor:not([mini])':
+  'f5': 'sort-lines:natural'
+```
 
 ## Required reading
 
