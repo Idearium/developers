@@ -43,6 +43,8 @@ You'll need the following Atom editor plugins (or suitable alternatives if you c
 - [pigments](https://atom.io/packages/pigments)
 - [sort-lines](https://atom.io/packages/sort-lines)
 
+Note: atom-ide-ui contains it's own linter. You can optionally use [linter](https://atom.io/packages/linter) instead.
+
 ## Required reading
 
 These are things that I'd like you to start reading.
