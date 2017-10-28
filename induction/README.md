@@ -31,13 +31,17 @@ The following details the software you should download and install on your compu
 
 You'll need the following Atom editor plugins (or suitable alternatives if you choose another editor):
 
-- [Atom Beautify](https://atom.io/packages/atom-beautify)
+- [atom-ide-ui](https://atom.io/packages/atom-ide-ui)
+- [atom-ternjs](https://atom.io/packages/atom-ternjs)
+- [docblockr](https://atom.io/packages/docblockr)
 - [editorconfig](https://atom.io/packages/editorconfig)
-- [emmet](https://atom.io/packages/emmet)
+- [ide-typescript](https://atom.io/packages/ide-typescript)
 - [language-docker](https://atom.io/packages/language-docker)
 - [language-nginx](https://atom.io/packages/language-nginx)
-- [linter-docker](https://atom.io/packages/linter-docker)
 - [linter-eslint](https://atom.io/packages/linter-eslint)
+- [linter-stylelint](https://atom.io/packages/linter-stylelint)
+- [pigments](https://atom.io/packages/pigments)
+- [sort-lines](https://atom.io/packages/sort-lines)
 
 ## Required reading
 
