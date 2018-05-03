@@ -32,6 +32,10 @@ This repository is broken down into some key areas:
   - [Promise Usage Guide](./javascript/promise.md)
   - [Linting](./javascript/.eslintrc)
 
+## [Kubernetes](./kubernetes/)
+
+  - [Usage Guide](./kubernetes/README.md)
+
 ## [RabbitMQ](./rabbitmq/)
 
   - [Usage Guide](./rabbitmq/usageguide.md)
