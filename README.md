@@ -8,6 +8,7 @@ This repository is broken down into some key areas:
 
   - [Induction and setup](./induction)
   - [Our stack](./stack)
+  - [Devops](./devops)
   - [Style guides](./style-guides.md)
 
 ## [Development tools](./development-tools/)
