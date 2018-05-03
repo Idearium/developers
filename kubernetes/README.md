@@ -6,6 +6,23 @@ We use Kubernetes as our orchestration engine to run our microservices.
 
 These are the conventions we've developed and used within Kubernetes.
 
+### Manifests
+
+Kubernetes has two modes of operation:
+
+- Imperative commands
+- Declarative object configuration
+
+We solely use declarative object configuration. This has the advantage of being able to version control your Kubernetes spec. This is important so that environments can easily be recreated exactly as they were previously.
+
+All of our manifests are seperated by environment, and stored in a projects `manifests` directory (i.e. `manifests/local` for the local environment and `manifests/production` for the production environment).
+
+#### Templates
+
+The Idearium cli, responsible for applying Kubernetes manifests to a cluster, has the capability to work with template variables. If you create a file ending in `.yaml.tmpl` the cli will know to parse the file through Mustache and generate a `.yaml` file.
+
+All files are stored in `manifests/location/.combined/`. Files ending in `.yaml` are copied across without being run through Mustache. The files store in `.combined` are passed to Kubernetes.
+
 ### Ingress
 
 We use Kubernetes ingress to ensure multiple projects can be run from one local Kubernetes cluster (via Minikube). We don't use the Minikube ingress addon, but use our own custom Ingress controller.

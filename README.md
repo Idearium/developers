@@ -9,6 +9,7 @@ This repository is broken down into some key areas:
   - [Induction and setup](./induction)
   - [Our stack](./stack)
   - [Devops](./devops)
+  - [Philosophy](./philosophy)
   - [Style guides](./style-guides.md)
 
 ## [Development tools](./development-tools/)
