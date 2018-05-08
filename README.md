@@ -22,6 +22,10 @@ This repository is broken down into some key areas:
 
   - [Usage Guide](./docker/README.md)
 
+## [Google Cloud Platform](./gcp/)
+
+  - [Usage Guide](./gcp/README.md)
+
 ## [Git + GitHub](./git/)
 
   - [Usage Guide](./git/usageguide.md)
