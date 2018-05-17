@@ -23,7 +23,7 @@ We use the following to develop projects:
 Infrastructure common provides RabbitMQ, MongoDB and Redis and is run within a VM. It also provides Kubernetes ingress (via Minikube) so that each project can be access locally via domain names.
 
 [infrastructurecommon]: https://github.com/idearium/infrastructure-common
-[ideariumlci]: https://github.com/idearium/cli
+[ideariumcli]: https://github.com/idearium/cli
 [ideariumlib]: https://github.com/idearium/idearium-lib
 [minikube]: https://github.com/kubernetes/minikube
 [vmwarefusion]: https://www.vmware.com/au/products/fusion.html
