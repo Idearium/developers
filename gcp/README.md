@@ -31,12 +31,25 @@ You'll need to add a shared service account so that you can push to gcr. To add 
 
 We use GKE for all of Kubernetes workloads.
 
-## Creating a new Kubernetes cluster
+### Listing clusters
+
+You can easily list all clusters for the current `gcloud` configured project:
+
+- Execute `gcloud container clusters list`.
+
+### Creating a new Kubernetes cluster
 
 To create a new Kubernetes cluster:
 
 - Set the `gcloud` project with `gcloud config set project teamly-cloud`.
-- Create a cluster with `gcloud beta container clusters create {cluster-name} --cluster-version=1.8.8-gke.0 --zone=us-east1-b --enable-autorepair --machine-type=n1-standard-1`.
+- Create a cluster with `gcloud beta container clusters create {cluster-name} --cluster-version=1.8.8-gke.0 --zone=us-east1-b --enable-autorepair --machine-type=n1-standard-2 --num-nodes=3`.
+
+### Using a Kubernetes cluster
+
+If you need to use a Kubernetes cluster you haven't before, you'll need to follow these steps:
+
+- Execute `gcloud beta container clusters list` to show the clusters.
+- Execute `gcloud beta container clusters get-credentials {cluster-name} --zone {zone}`
 
 ## Google container registry
 
