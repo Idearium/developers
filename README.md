@@ -40,6 +40,7 @@ This repository is broken down into some key areas:
 ## [Kubernetes](./kubernetes/)
 
   - [Usage Guide](./kubernetes/README.md)
+  - [Minikube](./kubernetes/minikube.md)
 
 ## [RabbitMQ](./rabbitmq/)
 
