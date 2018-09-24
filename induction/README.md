@@ -25,7 +25,7 @@ The following details the software you should download and install on your compu
 - [Vagrant](https://www.vagrantup.com/)
 - [VMware Fusion](https://www.vmware.com/products/fusion/fusion-evaluation.html) (standard)
 - [Vagrant VMware plugin](https://www.vagrantup.com/vmware/downloads.html) (and install the plugin following these instructions)
-- [VS Code](https://code.visualstudio.com/download) (or your choice of editor)
+- [VS Code](./vs-code.md) (or your choice of editor)
 - [Slack](https://slack.com/downloads/osx) (our team domain is [idearium.slack.com](https://idearium.slack.com))
 - [Google Drive File Stream](https://www.google.com/drive/download/)
 - [Postman](https://www.getpostman.com/)
