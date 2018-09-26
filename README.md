@@ -8,6 +8,8 @@ This repository is broken down into some key areas:
 
   - [Induction and setup](./induction)
   - [Our stack](./stack)
+  - [Devops](./devops)
+  - [Philosophy](./philosophy)
   - [Style guides](./style-guides.md)
 
 ## [Development tools](./development-tools/)
@@ -20,6 +22,10 @@ This repository is broken down into some key areas:
 
   - [Usage Guide](./docker/README.md)
 
+## [Google Cloud Platform](./gcp/)
+
+  - [Usage Guide](./gcp/README.md)
+
 ## [Git + GitHub](./git/)
 
   - [Usage Guide](./git/usageguide.md)
@@ -30,6 +36,11 @@ This repository is broken down into some key areas:
   - [Style guide](./javascript/styleguide.md)
   - [Promise Usage Guide](./javascript/promise.md)
   - [Linting](./javascript/.eslintrc)
+
+## [Kubernetes](./kubernetes/)
+
+  - [Usage Guide](./kubernetes/README.md)
+  - [Minikube](./kubernetes/minikube.md)
 
 ## [RabbitMQ](./rabbitmq/)
 

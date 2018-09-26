@@ -8,10 +8,10 @@ We've split our core tech stack down into a few different categories:
 
 ### DevOps
 
-- Vagrant.
-- Gulp.js.
+- Minkube.
 - Git.
-- Sass.
+- Idearium cli.
+- Infrastructure common.
 
 ### Application services
 
@@ -25,7 +25,7 @@ We've split our core tech stack down into a few different categories:
 
 - Docker.
 - RabbitMQ.
-- Consul.
+- Kubernetes.
 
 ### Client-side
 
@@ -38,21 +38,17 @@ We've split our core tech stack down into a few different categories:
 
 DevOps is super important. The more happy the developer, the better her code.
 
-### Vagrant
+### Idearium cli
 
-We use [Vagrant][vagrant] to provide isolated, consistent development environments.
+We have our own cli that we use and bake into all of our processes. It underpins our philosophy to development.
 
-### Gulp
+### Infrastructure common
 
-We use [Gulp][gulp] to drive our build and automation workflows.
+All of our projects depend on a similar architecture. In production, we also use as many managed services as we can. Infrastructure common is the managed services, but for production. We also use it to coordinate depedency installation for all of our projects.
 
 ### Git
 
 We use [Git][git] for versioning and [GitHub][github] for repository hosting.
-
-### Sass/Less
-
-[Sass][sass] is our primary choice of CSS pre-processor. But we also use [Less][less].
 
 ## Application services
 
@@ -61,6 +57,14 @@ These drive our core application services, or back ends.
 ### Node.js
 
 We use [Node.js][nodejs] as our application server.
+
+### Nginx
+
+We use [Nginx][nginx] as our primary web server. We use it to serve static files, and to proxy to our application servers.
+
+### Caddy
+
+[Caddy][caddy] is an alternative web server that we use. It serves static files, and proxies to our application servers.
 
 ### Mongo
 
@@ -86,9 +90,9 @@ Infrastructure is the tech we use to power our applications.
 
 We use [Docker][docker] as our microservices runtime for all environments including development, beta, staging, production.
 
-### Consul
+### Kubernetes
 
-We use [Consul][consul] hand-in-hand with Docker, to provide orchestration for our mciroservices.
+We use [Kubernetes][kubernetes] as our microservices orchestration engine.
 
 ### RabbitMQ
 
@@ -119,7 +123,7 @@ We use [Bootstrap][bootstrap] as our CSS/HTML framework.
 [mongodb]: https://www.mongodb.com/
 [redis]: https://redis.io/
 [rabbitmq]: https://www.rabbitmq.com/
-[consul]: https://www.consul.io/
+[kubernetes]: https://kubernetes.io/
 [linz]: https://github.com/linzjs/linz
 [express]: http://expressjs.com/
 [vagrant]: https://www.vagrantup.com/
@@ -132,3 +136,5 @@ We use [Bootstrap][bootstrap] as our CSS/HTML framework.
 [less]: http://lesscss.org/
 [jquery]: https://jquery.com/
 [bootstrap]: https://getbootstrap.com/
+[nginx]: https://www.nginx.com/
+[caddy]: https://caddyserver.com/
