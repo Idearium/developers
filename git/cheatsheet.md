@@ -16,6 +16,10 @@ Outputs the short hash of each commit, along with the comment and list of change
 
 Creates a local branch and then pushes it to the origin repository.
 
+## `git checkout -b {name} origin/{name}`
+
+Creates a local branch from existing remote branch with tracking.
+
 ## `git branch -D {name} && git push origin :{name}`
 
 Deletes a local branch then removes it from the origin repository too.
@@ -43,3 +47,11 @@ Perform a git fetch, and include all remotes that are configured on your local r
 ## `git pull --rebase`
 
 Use this when you're pulling in remote changes, to a branch that has unreleased commits. It will ensure your commits remain on top.
+
+## `git commit --amend -m "{new commit message here}"`
+
+Amends the last commit message, and creates a new commit. Be aware that it creates a new commit, and therefore take into consideration remote branches as you may need to force push.
+
+## `git stash save -u "{optional message here}"`
+
+Stash the changes in current branch including untracked files.
