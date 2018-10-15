@@ -45,7 +45,10 @@ This repository is broken down into some key areas:
 ## [RabbitMQ](./rabbitmq/)
 
   - [Usage Guide](./rabbitmq/usageguide.md)
+  
+## [Deployment](./deployment/)
 
+  - [Node Redeployment Guide](./deployment/nodes)
 
 ---
 

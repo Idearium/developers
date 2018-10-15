@@ -1,0 +1,43 @@
+#Deploying applications on a new node
+
+This guide will help the team to redeploy an existing application on a new node in the event it goes down and is unrecoverable through standard processes e.g. redeploying the container.
+
+## Things to look for...
+
+1. Ensure the hosting service isn't experiencing any outages. If there is wait it might be worth waiting until things stabilise as that could be the cause of the issues.
+2. Check that the Digital Ocean droplet that relates to the Docker Cloud node still exists, if it doesn't you will need to deploy on a new node.
+
+## Steps to create a new node and deploy
+
+### Step 1. Docker Cloud
+
+- Log into Docker Cloud
+- Create a new node cluster (copy an existing one as the naming and tagging convention but increment it e.g. focusbooster-hq-19-do-nyc becomes focusbooster-hq-20-do-nyc)
+- Wait for it to deploy
+
+### Step 2. Code
+
+- Open up the codebase the `stack.yml`
+- Replace all references to the old node with the new node name
+- Copy the `stack.yml` file
+
+### Step 3. Docker Cloud
+
+- Copy and paste it into the Docker Cloud new stack window
+- Update something with the tag...Scott?
+- Take the first static URL and make sure it resolves in the browser
+
+### Step 4. AWS
+
+- Log-in to AWS > Route 53 > Hosted zone management > your application
+- Update the DNS to point at the same static URL used above
+
+### Step 5. Hit up your application to make sure it is working
+
+### Step 6. Tidying up
+
+When everything is working as expected there are a few clean up tasks;
+
+- Push the code with the update `stack.yml' file
+- Delete the old node (you might like to leave a day or two to make sure everything is working, but don't forget)
+- Delete any retired droplets or other hosting environments
