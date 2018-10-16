@@ -26,6 +26,8 @@ When we test, we only ever test what we think should work. Not what people might
 - While a page is still loading try clicking all the buttons
 - Use the back buttons
 - Subscribe and try to subscribe again
+- Try things with slow connection settings
+- Post forms without completing them
 
 # What to test
 
