@@ -14,11 +14,14 @@ There are numerous browsers available and we need to ensure Idearium projects fu
   - Chrome (latest)
   - Firefox (latest)
   - IE11
+  - Edge
 
 - Tablet
   - Safari (latest)
   - Chrome (latest)
 
 - Mobile
-  - Chrome (latest)
+  - Chrome iOS (latest)
+  - Chrome Android (latest) 
   - Android browser (latest)
+  - Safari (latest)
