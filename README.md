@@ -46,6 +46,10 @@ This repository is broken down into some key areas:
 
   - [Usage Guide](./rabbitmq/usageguide.md)
 
+## [Testing](./testing/)
+
+  - [Device and browser testing](./testing/device%20and%20browser.md)
+  - [The how, when and what guide](./testing/guide.md)
 
 ---
 
