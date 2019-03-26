@@ -34,8 +34,8 @@ The following details the software you should download and install on your compu
 
 These are things that I'd like you to start reading.
 
-- [Idearium style guide](./style-guide)
-- [Tech stack](./stack)
+- [Idearium style guide](../style-guides.md)
+- [Tech stack](../stack)
 - [The Reactive Manifesto](http://www.reactivemanifesto.org/)
 - [Exploring es6](http://exploringjs.com/es6/index.html)
 - [The Docker Book](https://www.dropbox.com/s/3ghghh0x2h3tl3i/TheDockerBook.epub?dl=0)
