@@ -2,6 +2,16 @@
 
 We use as much of the Google Cloud Platform as we can. There are bunch of guides in here for using particular GCP services.
 
+## TL;DR
+
+If you have arrived here you probably encountered the error `error: context "<name>" does not exist`. Note: these commands are described in greater detail below.
+
+- `gcloud auth login` (Skip if you have previously logged in)
+- `gcloud projects list`
+- `gcloud config set project <project name>`
+- `gcloud container clusters list`
+- `gcloud container clusters get-credentials <container> --zone us-east1-b`
+
 ## Projects
 
 Our organisation has a few projects. This guide helps you work with projects.
@@ -70,7 +80,7 @@ To use the Google container registry from Codefresh:
 
 ### Pushing via Codefresh
 
-You can also puth to the Google container registry from Codefresh. To do so:
+You can also push to the Google container registry from Codefresh. To do so:
 
 - In the deploy steps in your `codefresh.yml`, use the following:
   - registry: gcr
