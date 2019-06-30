@@ -42,14 +42,14 @@ You can easily list all clusters for the current `gcloud` configured project:
 To create a new Kubernetes cluster:
 
 - Set the `gcloud` project with `gcloud config set project teamly-cloud`.
-- Create a cluster with `gcloud beta container clusters create {cluster-name} --cluster-version=1.8.8-gke.0 --zone=us-east1-b --enable-autorepair --machine-type=n1-standard-2 --num-nodes=3`.
+- Create a cluster with `gcloud container clusters create {cluster-name} --cluster-version=1.8.8-gke.0 --zone=us-east1-b --enable-autorepair --machine-type=n1-standard-2 --num-nodes=3`.
 
 ### Using a Kubernetes cluster
 
 If you need to use a Kubernetes cluster you haven't before, you'll need to follow these steps:
 
-- Execute `gcloud beta container clusters list` to show the clusters.
-- Execute `gcloud beta container clusters get-credentials {cluster-name} --zone {zone}`
+- Execute `gcloud container clusters list` to show the clusters.
+- Execute `gcloud container clusters get-credentials {cluster-name} --zone {zone}`
 
 ## Google container registry
 
@@ -65,13 +65,13 @@ To use the Google container registry from Codefresh:
 - Visit the Storage browser and show the info panel for the desired bucket.
 - In the _Add members_ field enter the service account email.
 - Choose the following roles:
-    - Storage Legacy Bucket Reader
-    - Storage Legacy Bucket Writer
+  - Storage Legacy Bucket Reader
+  - Storage Legacy Bucket Writer
 
 ### Pushing via Codefresh
 
 You can also puth to the Google container registry from Codefresh. To do so:
 
 - In the deploy steps in your `codefresh.yml`, use the following:
-    - registry: gcr
-    - image_name: {project-id}/{image-name}
+  - registry: gcr
+  - image_name: {project-id}/{image-name}
